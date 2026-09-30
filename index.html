@@ -1,1 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>A Letter for You | Teacher's Day</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Background decoration -->
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+
+    <!-- ==========================================
+         HEADER
+    =========================================== -->
+
+    <header>
+
+        <div class="small-title">
+            TEACHER'S DAY • 2026
+        </div>
+
+        <h1>
+            A Little Something
+            <span>For You</span>
+        </h1>
+
+        <p class="subtitle">
+
+            Some words are worth waiting for.
+            <br>
+            Some letters are worth unlocking.
+
+        </p>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         INTRODUCTION
+    =========================================== -->
+
+    <section class="intro">
+
+        <p>
+
+            Dear Teacher,
+
+            <br><br>
+
+            Behind these two locks are two little letters
+            written especially for you. Each one has a
+            question waiting to be answered.
+
+            <br><br>
+
+            Take your time. Think back.
+            And when you're ready, unlock them.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         LETTER LOCKS
+    =========================================== -->
+
+    <main>
+
+        <div class="letter-grid">
+
+
+            <!-- LETTER 1 -->
+
+            <article
+                class="letter-card locked"
+                data-letter="1"
+            >
+
+                <div class="lock-icon">
+                    🔒
+                </div>
+
+                <div class="letter-number">
+                    LETTER 01
+                </div>
+
+                <h2>
+                    A Letter of Gratitude
+                </h2>
+
+                <p>
+                    There's something I'd like to tell you.
+                </p>
+
+                <button
+                    class="open-button"
+                    onclick="openLetter(1)"
+                >
+                    UNLOCK LETTER
+                </button>
+
+            </article>
+
+
+
+            <!-- LETTER 2 -->
+
+            <article
+                class="letter-card locked"
+                data-letter="2"
+            >
+
+                <div class="lock-icon">
+                    🔒
+                </div>
+
+                <div class="letter-number">
+                    LETTER 02
+                </div>
+
+                <h2>
+                    A Letter to Remember
+                </h2>
+
+                <p>
+                    One more message, waiting just for you.
+                </p>
+
+                <button
+                    class="open-button"
+                    onclick="openLetter(2)"
+                >
+                    UNLOCK LETTER
+                </button>
+
+            </article>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+
+        <p>
+            Made with gratitude.
+        </p>
+
+        <span>
+            Happy Teacher's Day ♡
+        </span>
+
+    </footer>
+
+
+
+    <!-- ==========================================
+         MODAL
+    =========================================== -->
+
+    <div
+        class="modal"
+        id="letterModal"
+    >
+
+        <div
+            class="modal-overlay"
+            onclick="closeModal()"
+        ></div>
+
+
+        <div class="modal-content">
+
+            <button
+                class="close-button"
+                onclick="closeModal()"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+
+            <!-- This is where the question
+                 or letter will appear -->
+
+            <div id="modalBody"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
