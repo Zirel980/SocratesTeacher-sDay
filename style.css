@@ -1,1 +1,847 @@
+/* ==========================================
+   RESET
+========================================== */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(218, 170, 92, 0.08),
+            transparent 30%
+        ),
+        #11110f;
+
+    color: #eee9df;
+
+    font-family: "DM Sans", sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+/* ==========================================
+   BACKGROUND
+========================================== */
+
+.background-glow {
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    pointer-events: none;
+
+    opacity: .15;
+
+}
+
+
+.glow-one {
+
+    top: -150px;
+    left: -100px;
+
+    background: #d9a65a;
+
+}
+
+
+.glow-two {
+
+    bottom: -150px;
+    right: -100px;
+
+    background: #80613a;
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header {
+
+    text-align: center;
+
+    padding: 100px 20px 50px;
+
+    position: relative;
+
+}
+
+
+.small-title {
+
+    color: #d9a65a;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+
+}
+
+
+header h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(
+        48px,
+        8vw,
+        90px
+    );
+
+    line-height: .95;
+
+    font-weight: 500;
+
+}
+
+
+header h1 span {
+
+    display: block;
+
+    color: #d9a65a;
+
+    font-style: italic;
+
+}
+
+
+.subtitle {
+
+    margin-top: 30px;
+
+    color: #aaa49a;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+/* ==========================================
+   INTRO
+========================================== */
+
+.intro {
+
+    max-width: 650px;
+
+    margin: 0 auto 70px;
+
+    padding: 0 25px;
+
+    text-align: center;
+
+}
+
+
+.intro p {
+
+    color: #bcb6ab;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+}
+
+
+/* ==========================================
+   LETTER GRID
+========================================== */
+
+main {
+
+    width: min(
+        1000px,
+        90%
+    );
+
+    margin: auto;
+
+}
+
+
+.letter-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+
+}
+
+
+/* ==========================================
+   LETTER CARD
+========================================== */
+
+.letter-card {
+
+    position: relative;
+
+    padding: 45px 35px;
+
+    min-height: 360px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    border: 1px solid
+        rgba(255,255,255,.12);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(15px);
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+
+}
+
+
+.letter-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(217,166,90,.5);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.3);
+
+}
+
+
+/* ==========================================
+   LOCK
+========================================== */
+
+.lock-icon {
+
+    font-size: 38px;
+
+    margin-bottom: 18px;
+
+    filter:
+        grayscale(.3);
+
+}
+
+
+.letter-card.unlocked
+.lock-icon {
+
+    filter: none;
+
+}
+
+
+/* ==========================================
+   CARD TEXT
+========================================== */
+
+.letter-number {
+
+    color: #d9a65a;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.letter-card h2 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    margin-bottom: 12px;
+
+}
+
+
+.letter-card p {
+
+    color: #918d85;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.open-button {
+
+    border: 1px solid
+        rgba(217,166,90,.5);
+
+    background: transparent;
+
+    color: #d9a65a;
+
+    padding: 12px 22px;
+
+    border-radius: 50px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.open-button:hover {
+
+    background: #d9a65a;
+
+    color: #151411;
+
+}
+
+
+.open-button:disabled {
+
+    opacity: .5;
+
+    cursor: default;
+
+}
+
+
+/* ==========================================
+   MODAL
+========================================== */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+
+}
+
+
+.modal.active {
+
+    display: flex;
+
+}
+
+
+.modal-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,.82);
+
+    backdrop-filter: blur(8px);
+
+}
+
+
+.modal-content {
+
+    position: relative;
+
+    width: min(
+        700px,
+        95%
+    );
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #191815;
+
+    border: 1px solid
+        rgba(217,166,90,.3);
+
+    border-radius: 18px;
+
+    padding: 45px;
+
+    z-index: 2;
+
+    animation:
+        modalOpen .35s ease;
+
+}
+
+
+@keyframes modalOpen {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* ==========================================
+   CLOSE
+========================================== */
+
+.close-button {
+
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    background: none;
+
+    border: none;
+
+    color: #aaa;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+}
+
+
+.close-button:hover {
+
+    color: #d9a65a;
+
+}
+
+
+/* ==========================================
+   QUESTION
+========================================== */
+
+.question-label {
+
+    color: #d9a65a;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+.question-title {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 34px;
+
+    margin: 12px 0 20px;
+
+}
+
+
+.clue-box {
+
+    background:
+        rgba(217,166,90,.07);
+
+    border-left:
+        3px solid #d9a65a;
+
+    padding: 18px;
+
+    margin-bottom: 25px;
+
+    color: #bcb6ab;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+.question-text {
+
+    color: #ddd7cd;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+
+}
+
+
+.password-input {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    background: #11110f;
+
+    border: 1px solid #3b3934;
+
+    border-radius: 8px;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 14px;
+
+}
+
+
+.password-input:focus {
+
+    border-color:
+        #d9a65a;
+
+}
+
+
+.unlock-button {
+
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #d9a65a;
+
+    color: #171512;
+
+    font-weight: 700;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+}
+
+
+.unlock-button:hover {
+
+    background: #e5b873;
+
+}
+
+
+.wrong-answer {
+
+    min-height: 22px;
+
+    margin-top: 12px;
+
+    color: #d97968;
+
+    font-size: 12px;
+
+}
+
+
+/* ==========================================
+   LETTER CONTENT
+========================================== */
+
+.letter-photo {
+
+    width: 100%;
+
+    max-height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.open-letter-label {
+
+    color: #d9a65a;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+.letter-title {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 38px;
+
+    margin: 10px 0 25px;
+
+}
+
+
+.letter-body {
+
+    color: #c3bdb2;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 16px;
+
+    line-height: 2;
+
+}
+
+
+.letter-body p {
+
+    margin-bottom: 20px;
+
+}
+
+
+.signature {
+
+    color: #eee9df;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-style: italic;
+
+    margin-top: 35px;
+
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+
+    text-align: center;
+
+    padding: 90px 20px 50px;
+
+    color: #77736c;
+
+    font-size: 12px;
+
+}
+
+
+footer span {
+
+    display: block;
+
+    color: #d9a65a;
+
+    margin-top: 8px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 16px;
+
+}
+
+
+/* ==========================================
+   WRONG ANSWER ANIMATION
+========================================== */
+
+.shake {
+
+    animation:
+        shake .35s ease;
+
+}
+
+
+@keyframes shake {
+
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    75% {
+        transform: translateX(8px);
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+    header {
+
+        padding-top: 70px;
+
+    }
+
+
+    .letter-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .letter-card {
+
+        min-height: 320px;
+
+    }
+
+
+    .modal-content {
+
+        padding: 35px 25px;
+
+    }
+
+
+    .question-title {
+
+        font-size: 28px;
+
+    }
+
+
+    .letter-title {
+
+        font-size: 30px;
+
+    }
+
+  }
