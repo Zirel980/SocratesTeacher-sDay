@@ -1,5 +1,6 @@
 /* ==========================================
-   RESET
+   TEACHER'S DAY
+   CHEERFUL BLUE THEME
 ========================================== */
 
 * {
@@ -8,27 +9,25 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
 
     min-height: 100vh;
 
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(218, 170, 92, 0.08),
-            transparent 30%
-        ),
-        #11110f;
-
-    color: #eee9df;
-
     font-family: "DM Sans", sans-serif;
+
+    color: #183b56;
+
+    background:
+        linear-gradient(
+            180deg,
+            #bfe9ff 0%,
+            #dff5ff 50%,
+            #ffffff 100%
+        );
 
     overflow-x: hidden;
 
@@ -36,43 +35,54 @@ body {
 
 
 /* ==========================================
-   BACKGROUND
+   DECORATIVE BACKGROUND
 ========================================== */
 
-.background-glow {
+body::before {
+
+    content: "";
 
     position: fixed;
 
     width: 350px;
     height: 350px;
 
-    border-radius: 50%;
-
-    filter: blur(120px);
-
-    pointer-events: none;
-
-    opacity: .15;
-
-}
-
-
-.glow-one {
-
     top: -150px;
     left: -100px;
 
-    background: #d9a65a;
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    opacity: .45;
+
+    filter: blur(5px);
+
+    pointer-events: none;
 
 }
 
+body::after {
 
-.glow-two {
+    content: "";
 
-    bottom: -150px;
-    right: -100px;
+    position: fixed;
 
-    background: #80613a;
+    width: 300px;
+    height: 300px;
+
+    right: -120px;
+    bottom: -100px;
+
+    background: #fff3a6;
+
+    border-radius: 50%;
+
+    opacity: .5;
+
+    filter: blur(20px);
+
+    pointer-events: none;
 
 }
 
@@ -83,24 +93,38 @@ body {
 
 header {
 
+    position: relative;
+
     text-align: center;
 
-    padding: 100px 20px 50px;
+    padding: 80px 20px 55px;
 
-    position: relative;
+    z-index: 1;
 
 }
 
 
 .small-title {
 
-    color: #d9a65a;
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 50px;
+
+    background: #ffffff;
+
+    color: #287bb5;
 
     font-size: 10px;
 
     font-weight: 700;
 
-    letter-spacing: 4px;
+    letter-spacing: 2px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(47, 134, 190, .12);
 
     margin-bottom: 25px;
 
@@ -111,15 +135,17 @@ header h1 {
 
     font-family: "Playfair Display", serif;
 
+    color: #185985;
+
     font-size: clamp(
         48px,
         8vw,
-        90px
+        88px
     );
 
-    line-height: .95;
+    line-height: 1;
 
-    font-weight: 500;
+    font-weight: 600;
 
 }
 
@@ -128,7 +154,7 @@ header h1 span {
 
     display: block;
 
-    color: #d9a65a;
+    color: #f5a623;
 
     font-style: italic;
 
@@ -137,9 +163,9 @@ header h1 span {
 
 .subtitle {
 
-    margin-top: 30px;
+    margin-top: 25px;
 
-    color: #aaa49a;
+    color: #4e7188;
 
     font-size: 14px;
 
@@ -149,31 +175,110 @@ header h1 span {
 
 
 /* ==========================================
-   INTRO
+   INTRODUCTION
 ========================================== */
 
 .intro {
 
-    max-width: 650px;
+    position: relative;
+
+    width: min(
+        650px,
+        90%
+    );
 
     margin: 0 auto 70px;
 
-    padding: 0 25px;
+    padding: 28px 35px;
 
     text-align: center;
+
+    background: rgba(
+        255,
+        255,
+        255,
+        .8
+    );
+
+    border-radius: 20px;
+
+    border: 2px solid
+        rgba(255,255,255,.9);
+
+    box-shadow:
+        0 15px 40px
+        rgba(40, 123, 181, .12);
+
+    z-index: 1;
+
+}
+
+
+.intro::before {
+
+    content: "✦";
+
+    position: absolute;
+
+    top: -18px;
+
+    left: 30px;
+
+    color: #f5a623;
+
+    font-size: 30px;
+
+}
+
+
+.intro::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    bottom: -18px;
+
+    right: 30px;
+
+    color: #63c6f5;
+
+    font-size: 25px;
 
 }
 
 
 .intro p {
 
-    color: #bcb6ab;
+    color: #496b80;
 
-    font-family: "Playfair Display", serif;
+    font-family:
+        "Playfair Display",
+        serif;
 
-    font-size: 17px;
+    font-size: 16px;
 
-    line-height: 1.9;
+    line-height: 1.8;
+
+}
+
+
+/* ==========================================
+   MAIN
+========================================== */
+
+main {
+
+    width: min(
+        1050px,
+        90%
+    );
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 1;
 
 }
 
@@ -182,18 +287,6 @@ header h1 span {
    LETTER GRID
 ========================================== */
 
-main {
-
-    width: min(
-        1000px,
-        90%
-    );
-
-    margin: auto;
-
-}
-
-
 .letter-grid {
 
     display: grid;
@@ -201,22 +294,22 @@ main {
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 30px;
+    gap: 50px;
 
 }
 
 
 /* ==========================================
-   LETTER CARD
+   ENVELOPE CARD
 ========================================== */
 
 .letter-card {
 
     position: relative;
 
-    padding: 45px 35px;
-
     min-height: 360px;
+
+    padding: 35px 30px 30px;
 
     display: flex;
 
@@ -228,24 +321,83 @@ main {
 
     text-align: center;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.055),
-            rgba(255,255,255,.015)
-        );
+    background: #ffffff;
 
-    border: 1px solid
-        rgba(255,255,255,.12);
+    border-radius: 8px 8px 18px 18px;
 
-    border-radius: 18px;
+    border: 3px solid #8ed4f5;
 
-    backdrop-filter: blur(15px);
+    box-shadow:
+        0 20px 45px
+        rgba(36, 121, 174, .16);
+
+    overflow: hidden;
 
     transition:
-        transform .4s ease,
-        border-color .4s ease,
-        box-shadow .4s ease;
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+/*
+    Envelope flap
+*/
+
+.letter-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 130px;
+
+    background: #d9f3ff;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    border-bottom: 2px solid #8ed4f5;
+
+    z-index: 0;
+
+}
+
+
+/*
+    Envelope bottom folds
+*/
+
+.letter-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100px;
+
+    background: #edfaff;
+
+    clip-path:
+        polygon(
+            0 100%,
+            50% 20%,
+            100% 100%
+        );
+
+    pointer-events: none;
 
 }
 
@@ -253,49 +405,63 @@ main {
 .letter-card:hover {
 
     transform:
-        translateY(-6px);
-
-    border-color:
-        rgba(217,166,90,.5);
+        translateY(-10px)
+        rotate(-1deg);
 
     box-shadow:
-        0 20px 60px
-        rgba(0,0,0,.3);
+        0 28px 55px
+        rgba(36, 121, 174, .22);
 
 }
 
 
 /* ==========================================
-   LOCK
+   CARD CONTENT
 ========================================== */
+
+.lock-icon,
+.letter-number,
+.letter-card h2,
+.letter-card p,
+.open-button {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
 
 .lock-icon {
 
-    font-size: 38px;
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #fff8cf;
+
+    border: 3px solid #ffd65c;
+
+    border-radius: 50%;
+
+    font-size: 27px;
 
     margin-bottom: 18px;
 
-    filter:
-        grayscale(.3);
+    box-shadow:
+        0 7px 18px
+        rgba(245,166,35,.18);
 
 }
 
-
-.letter-card.unlocked
-.lock-icon {
-
-    filter: none;
-
-}
-
-
-/* ==========================================
-   CARD TEXT
-========================================== */
 
 .letter-number {
 
-    color: #d9a65a;
+    color: #2b91ca;
 
     font-size: 9px;
 
@@ -303,51 +469,50 @@ main {
 
     letter-spacing: 3px;
 
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 
 }
 
 
 .letter-card h2 {
 
+    color: #245878;
+
     font-family:
         "Playfair Display",
         serif;
 
-    font-size: 30px;
+    font-size: 29px;
 
-    font-weight: 500;
-
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 
 }
 
 
 .letter-card p {
 
-    color: #918d85;
+    color: #7290a1;
 
     font-size: 13px;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 
 }
 
 
 /* ==========================================
-   BUTTON
+   UNLOCK BUTTON
 ========================================== */
 
 .open-button {
 
-    border: 1px solid
-        rgba(217,166,90,.5);
+    border: none;
 
-    background: transparent;
+    background: #42aee2;
 
-    color: #d9a65a;
+    color: white;
 
-    padding: 12px 22px;
+    padding: 12px 23px;
 
     border-radius: 50px;
 
@@ -359,6 +524,10 @@ main {
 
     cursor: pointer;
 
+    box-shadow:
+        0 6px 15px
+        rgba(66,174,226,.25);
+
     transition: .3s;
 
 }
@@ -366,18 +535,14 @@ main {
 
 .open-button:hover {
 
-    background: #d9a65a;
+    background: #f5a623;
 
-    color: #151411;
+    transform:
+        translateY(-2px);
 
-}
-
-
-.open-button:disabled {
-
-    opacity: .5;
-
-    cursor: default;
+    box-shadow:
+        0 8px 18px
+        rgba(245,166,35,.25);
 
 }
 
@@ -419,19 +584,23 @@ main {
     inset: 0;
 
     background:
-        rgba(0,0,0,.82);
+        rgba(32, 108, 151, .55);
 
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(6px);
 
 }
 
+
+/* ==========================================
+   MODAL CONTENT
+========================================== */
 
 .modal-content {
 
     position: relative;
 
     width: min(
-        700px,
+        720px,
         95%
     );
 
@@ -439,16 +608,19 @@ main {
 
     overflow-y: auto;
 
-    background: #191815;
+    background: #ffffff;
 
-    border: 1px solid
-        rgba(217,166,90,.3);
+    border: 4px solid #9edcf7;
 
-    border-radius: 18px;
+    border-radius: 20px;
 
     padding: 45px;
 
     z-index: 2;
+
+    box-shadow:
+        0 30px 70px
+        rgba(24,89,133,.25);
 
     animation:
         modalOpen .35s ease;
@@ -463,8 +635,8 @@ main {
         opacity: 0;
 
         transform:
-            translateY(20px)
-            scale(.97);
+            translateY(25px)
+            scale(.96);
 
     }
 
@@ -482,7 +654,7 @@ main {
 
 
 /* ==========================================
-   CLOSE
+   CLOSE BUTTON
 ========================================== */
 
 .close-button {
@@ -490,24 +662,33 @@ main {
     position: absolute;
 
     top: 15px;
-    right: 20px;
+    right: 18px;
 
-    background: none;
+    width: 38px;
+    height: 38px;
 
     border: none;
 
-    color: #aaa;
+    border-radius: 50%;
 
-    font-size: 30px;
+    background: #e8f7ff;
+
+    color: #287bb5;
+
+    font-size: 25px;
 
     cursor: pointer;
+
+    transition: .25s;
 
 }
 
 
 .close-button:hover {
 
-    color: #d9a65a;
+    background: #ffe08a;
+
+    transform: rotate(10deg);
 
 }
 
@@ -518,7 +699,7 @@ main {
 
 .question-label {
 
-    color: #d9a65a;
+    color: #2b91ca;
 
     font-size: 9px;
 
@@ -531,30 +712,33 @@ main {
 
 .question-title {
 
+    color: #245878;
+
     font-family:
         "Playfair Display",
         serif;
 
     font-size: 34px;
 
-    margin: 12px 0 20px;
+    margin: 10px 0 20px;
 
 }
 
 
 .clue-box {
 
-    background:
-        rgba(217,166,90,.07);
+    background: #fff9d9;
 
     border-left:
-        3px solid #d9a65a;
+        5px solid #ffd65c;
 
-    padding: 18px;
+    border-radius: 8px;
+
+    padding: 17px;
 
     margin-bottom: 25px;
 
-    color: #bcb6ab;
+    color: #657b86;
 
     font-size: 13px;
 
@@ -563,9 +747,16 @@ main {
 }
 
 
+.clue-box strong {
+
+    color: #e29a00;
+
+}
+
+
 .question-text {
 
-    color: #ddd7cd;
+    color: #426579;
 
     font-size: 15px;
 
@@ -576,19 +767,23 @@ main {
 }
 
 
+/* ==========================================
+   ANSWER INPUT
+========================================== */
+
 .password-input {
 
     width: 100%;
 
-    padding: 14px 16px;
+    padding: 15px 17px;
 
-    background: #11110f;
+    background: #f4fbff;
 
-    border: 1px solid #3b3934;
+    border: 2px solid #b8e2f5;
 
-    border-radius: 8px;
+    border-radius: 10px;
 
-    color: white;
+    color: #245878;
 
     outline: none;
 
@@ -599,11 +794,18 @@ main {
 
 .password-input:focus {
 
-    border-color:
-        #d9a65a;
+    border-color: #42aee2;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(66,174,226,.12);
 
 }
 
+
+/* ==========================================
+   UNLOCK BUTTON
+========================================== */
 
 .unlock-button {
 
@@ -615,11 +817,11 @@ main {
 
     border: none;
 
-    border-radius: 8px;
+    border-radius: 10px;
 
-    background: #d9a65a;
+    background: #42aee2;
 
-    color: #171512;
+    color: white;
 
     font-weight: 700;
 
@@ -629,15 +831,21 @@ main {
 
     cursor: pointer;
 
+    transition: .3s;
+
 }
 
 
 .unlock-button:hover {
 
-    background: #e5b873;
+    background: #f5a623;
 
 }
 
+
+/* ==========================================
+   ERROR
+========================================== */
 
 .wrong-answer {
 
@@ -645,7 +853,7 @@ main {
 
     margin-top: 12px;
 
-    color: #d97968;
+    color: #e56c65;
 
     font-size: 12px;
 
@@ -653,7 +861,7 @@ main {
 
 
 /* ==========================================
-   LETTER CONTENT
+   OPENED LETTER
 ========================================== */
 
 .letter-photo {
@@ -664,16 +872,18 @@ main {
 
     object-fit: cover;
 
-    border-radius: 10px;
+    border-radius: 12px;
 
-    margin-bottom: 30px;
+    border: 4px solid #e0f5ff;
+
+    margin-bottom: 28px;
 
 }
 
 
 .open-letter-label {
 
-    color: #d9a65a;
+    color: #2b91ca;
 
     font-size: 9px;
 
@@ -686,20 +896,22 @@ main {
 
 .letter-title {
 
+    color: #245878;
+
     font-family:
         "Playfair Display",
         serif;
 
     font-size: 38px;
 
-    margin: 10px 0 25px;
+    margin: 8px 0 25px;
 
 }
 
 
 .letter-body {
 
-    color: #c3bdb2;
+    color: #526d7b;
 
     font-family:
         "Playfair Display",
@@ -721,7 +933,7 @@ main {
 
 .signature {
 
-    color: #eee9df;
+    color: #245878;
 
     font-family:
         "Playfair Display",
@@ -729,7 +941,11 @@ main {
 
     font-style: italic;
 
-    margin-top: 35px;
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px dashed #b8ddec;
 
 }
 
@@ -740,13 +956,17 @@ main {
 
 footer {
 
+    position: relative;
+
     text-align: center;
 
     padding: 90px 20px 50px;
 
-    color: #77736c;
+    color: #6d8b9c;
 
     font-size: 12px;
+
+    z-index: 1;
 
 }
 
@@ -755,7 +975,7 @@ footer span {
 
     display: block;
 
-    color: #d9a65a;
+    color: #f0a51b;
 
     margin-top: 8px;
 
@@ -763,13 +983,13 @@ footer span {
         "Playfair Display",
         serif;
 
-    font-size: 16px;
+    font-size: 18px;
 
 }
 
 
 /* ==========================================
-   WRONG ANSWER ANIMATION
+   SHAKE ANIMATION
 ========================================== */
 
 .shake {
@@ -805,7 +1025,7 @@ footer span {
 
     header {
 
-        padding-top: 70px;
+        padding-top: 65px;
 
     }
 
@@ -814,19 +1034,21 @@ footer span {
 
         grid-template-columns: 1fr;
 
+        gap: 35px;
+
     }
 
 
     .letter-card {
 
-        min-height: 320px;
+        min-height: 350px;
 
     }
 
 
     .modal-content {
 
-        padding: 35px 25px;
+        padding: 35px 23px;
 
     }
 
@@ -844,4 +1066,11 @@ footer span {
 
     }
 
-  }
+
+    .intro {
+
+        padding: 25px 20px;
+
+    }
+
+}
